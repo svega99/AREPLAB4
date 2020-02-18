@@ -11,7 +11,7 @@ import edu.escuelaing.arep.BestSpring.Annotations.web;
  *
  * @author santiago.vega-r
  */
-public class WebService {
+public class WebServiceIndex {
     
     
     @web
