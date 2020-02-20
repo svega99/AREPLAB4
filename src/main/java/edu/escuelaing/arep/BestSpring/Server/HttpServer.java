@@ -2,7 +2,10 @@ package edu.escuelaing.arep.BestSpring.Server;
 
 import org.apache.commons.io.FilenameUtils;
 
+import edu.escuelaing.arep.BestSpring.Framework.BestSpringBoot;
+
 import java.net.*;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.*;
@@ -19,7 +22,7 @@ public class HttpServer {
 	
   public static void main(String[] args) throws IOException {
 	  
-	  
+	  BestSpringBoot.leerPaginas();
 	   serverSocket = null;
 	   try { 
 	      serverSocket = new ServerSocket(getPort());
@@ -48,7 +51,8 @@ public class HttpServer {
 		   
 		   Pattern pattern = Pattern.compile("GET /([^\\s]+)");
 	       Matcher matcher = null;
-		   
+	       HashMap<String,String> rutaPaginas=BestSpringBoot.getRutaPaginas();
+	       
 		   while ((inputLine = in.readLine()) != null) {
 		      System.out.println("Recibí: " + inputLine);
 		      stringBuilder.append(inputLine);
@@ -57,7 +61,13 @@ public class HttpServer {
 	              if (matcher.find()) {
 	                  String req = matcher.group().substring(5);
 	                  System.out.println("VALUE: " + req);
-	                  returnRequest(req);
+	                  if (rutaPaginas.containsKey(req)) {
+	                	  out.println("HTTP/1.1 200 \r\nAccess-Control-Allow-Origin: *\r\nContent-Type: text/html\r\n\r\n");
+                          out.println(rutaPaginas.get(req));
+	                  }
+	                  else {
+	                	  returnRequest(req);
+	                  }
 	              }
 		    	  
 		    	  break; }
