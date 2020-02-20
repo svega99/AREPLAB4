@@ -10,7 +10,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.*;
 
-
+/**
+ * Servidor HTTP 
+ * 
+ * @author santiago.vega-r
+ *
+ */
 public class HttpServer {
 	static ServerSocket serverSocket = null;
 	
@@ -147,6 +152,11 @@ public class HttpServer {
 	  
   }
   
+  
+  /**
+   * Retorna el puerto de Heroku o el de defecto en caso de que no este puesto.
+   * @return El puerto
+   */
   static int getPort() {
       if (System.getenv("PORT") != null) {
           return Integer.parseInt(System.getenv("PORT"));

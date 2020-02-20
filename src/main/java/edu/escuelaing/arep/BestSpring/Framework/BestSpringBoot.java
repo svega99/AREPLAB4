@@ -17,6 +17,7 @@ import edu.escuelaing.arep.BestSpring.Annotations.web;
 
 
 /**
+ * Lee y almacena los POJOS que se encuentran en un paquete 
  *
  * @author santiago.vega-r
  */
@@ -24,7 +25,9 @@ public class BestSpringBoot {
     
 	private static HashMap<String,String> rutaPaginas= new HashMap<>();
 	
-	
+	/**
+	 * Lee los POJOS que se encuentran en un paquete, donde se encuentran las paginas y los guarda en un HashMap
+	 */
     public static void leerPaginas(){
     	
     	Reflections reflections = new Reflections("edu.escuelaing.arep.BestSpring.WebService", new SubTypesScanner(false)); 
@@ -54,13 +57,14 @@ public class BestSpringBoot {
        
     }
 
-
+    /**
+     * Devuelve el HashMap con la ruta y el contenido del html
+     * @return El HashMap
+     */
 	public static HashMap<String,String> getRutaPaginas() {
 		return rutaPaginas;
 	}
 
 
-	public static void setRutaPaginas(HashMap<String,String> rutaPaginas) {
-		BestSpringBoot.rutaPaginas = rutaPaginas;
-	}
+	
 }

@@ -8,12 +8,16 @@ package edu.escuelaing.arep.BestSpring.WebService;
 import edu.escuelaing.arep.BestSpring.Annotations.web;
 
 /**
+ * Clase donde cada metodo sera una pagina html
  *
  * @author santiago.vega-r
  */
 public class WebServiceIndex{
 
-	
+	/**
+	 *  Retorna el contenido de una pagina HTML
+	 * @return Contenido del HTML
+	 */
     @web("index.html")
     public static String content(){
     	return "<!DOCTYPE html>\n" + 
@@ -31,7 +35,10 @@ public class WebServiceIndex{
         		"</html>";
     }
     
-    
+    /**
+	 *  Retorna el contenido de una pagina HTML
+	 * @return Contenido del HTML
+	 */
     @web("otrapagina.html")
     public static String content2(){
         return "<!DOCTYPE html>\n" + 

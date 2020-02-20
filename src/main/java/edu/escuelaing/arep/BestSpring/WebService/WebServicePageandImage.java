@@ -2,8 +2,18 @@ package edu.escuelaing.arep.BestSpring.WebService;
 
 import edu.escuelaing.arep.BestSpring.Annotations.web;
 
+/**
+ * Clase donde cada metodo sera una pagina html
+ *
+ * @author santiago.vega-r
+ */
 public class WebServicePageandImage{
 
+	
+	/**
+	 *  Retorna el contenido de una pagina HTML
+	 * @return Contenido del HTML
+	 */
 	@web("page.html")
 	public static String content() {
 		
