@@ -45,7 +45,7 @@ public class HttpServer {
 		                         clientSocket.getOutputStream(), true);
 		   in = new BufferedReader(
 		                         new InputStreamReader(clientSocket.getInputStream()));
-		   String inputLine, outputLine;
+		   String inputLine;
 		   
 		   StringBuilder stringBuilder = new StringBuilder();
 		   

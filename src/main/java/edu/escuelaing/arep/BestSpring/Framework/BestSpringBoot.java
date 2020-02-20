@@ -8,8 +8,7 @@ package edu.escuelaing.arep.BestSpring.Framework;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
@@ -40,6 +39,7 @@ public class BestSpringBoot {
                 		try {
                 			String html= (String) m.invoke(null);
                 			String ruta= m.getAnnotation(web.class).value();
+                			
                 			
                 			rutaPaginas.put(ruta, html);
                 			} catch (Throwable ex) {
