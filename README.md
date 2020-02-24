@@ -78,6 +78,8 @@ Si quiere ejecutar cualquier programa desde local se puede poner en la linea de 
 > mvn  exec:java -D "edu.escuelaing.arep.BestSpring.Server.HttpServer"
 
 ```
+ Si lo ejecuta desde local puede entrar desde http://localhost:4567/index.html
+
 
 ## Diseño
 
